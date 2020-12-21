@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.techtown.ordermak">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ordermak2"
+        android:roundIcon="@mipmap/ordermak2_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:label="오더막">
+        <!--android:label="오더막"-->
+
+
+        <activity android:name=".activity.myAuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.JoinActivity"/>
+        <activity android:name=".activity.menu_basic"/>
+        <activity android:name=".activity.menu_keyword"/>
+        <activity android:name=".activity.menu_category"/>
+        <activity android:name=".activity.manual"/>
+        <activity android:name=".activity.order"/>
+        <activity android:name=".activity.menu_keyword_result"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.lodingclass"/>
+
+        <!-- 접근성 관련 서비스 부분 -->
+        <service
+            android:name="AccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+
+</manifest>

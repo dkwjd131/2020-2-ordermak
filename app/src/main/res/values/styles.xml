@@ -1,0 +1,14 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent = "Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#DCA7E6</item>
+        <item name="colorPrimaryDark">#DCA7E6</item>
+        <item name="colorAccent">#DCA7E6</item>
+
+        <!--custom font-family 적용 parent="Theme.AppCompat.Light.DarkActionBar"-->
+        <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
+        <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
+    </style>
+
+</resources>
