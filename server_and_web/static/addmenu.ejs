@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>카사막</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <form id="goMain" method=post action="/goMain">
+                <input type="hidden" name="owner_num" id = "owner_num" value="<%=owner_num%>">
+                <i><img SRC="\static\image_ordermak.png" style="width: 40px; height:40px;"></img></i>
+                <a href="#" onclick="document.getElementById('goMain').submit();">카사막</a>
+            </form>
+        </div>
+        <ul class="navbar__menu">
+            <form id="registerstore1" method=post action="/registerstore1">
+                <input type="hidden" name="owner_num" id = "owner_num" value="<%=owner_num%>">
+            </form>
+            <li><a href="#" onclick="document.getElementById('registerstore1').submit();">매장등록</a></li>
+            <form id="sendstorelist" method=post action="/sendstorelist">
+                <input type="hidden" name="owner_num" id = "owner_num" value="<%=owner_num%>">
+            </form>
+            <li><a href="#" onclick="document.getElementById('sendstorelist').submit();" >매장관리</a></li>
+            <li>
+                <form id="goOrderConfirm" method="post" action="/goOrderConfirm">
+                    <input type="hidden" name="owner_num" id = "owner_num" value="<%=owner_num%>">
+                    <input type="hidden" name="store_num" id = "store_num" value="<%=store_num%>">
+                        <a href="#" onclick="document.getElementById('goOrderConfirm').submit();">주문 확인</a>   
+                </form>
+            </li>
+        </ul>
+        <div class="navbar__icons">
+            <li><a href="/order">logout</a></li>
+        </div>
+    </nav>
+</body>
+
+<body>
+    <section class = "login-form">
+        <form id="addmenus" method="post" action="/addmenu">
+            <input type="hidden" name="owner_num" id = "owner_num" value="<%=owner_num%>%>">
+            <input type="hidden" name="store_num" id = "store_num" value="<%=store_num%>%>">
+            <div class="int-area">
+                <input type = "text" name = "menu_name" id="menu_name" >
+                <label for="menu_name">메뉴 이름</label>
+            </div>
+            <div class="int-area">
+                <input type = "text" name = "price" id="price" >
+                <label for="price">메뉴 가격</label>
+            </div>
+            <div class="int-area">
+                <input type = "text" name = "category" id="category" >
+                <label for="category">카테고리</label>
+            </div>
+            <div class="int-area">
+                <input type = "text" name = "description" id="description">
+                <label for="description">메뉴 설명</label>
+            </div>
+            <div class="btn-area">
+                <button type="submit">추가 하기</button>            
+            </div>
+        </form>
+    </section>
+    </body>
+</html> 
